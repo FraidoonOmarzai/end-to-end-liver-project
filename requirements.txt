@@ -1,0 +1,20 @@
+# local package
+-e .
+
+## external requirements
+## third party packages
+numpy
+pandas
+matplotlib
+scikit-learn
+notebook
+python-box==6.0.2
+pyYAML
+tqdm
+ensure==1.0.2
+joblib
+types-PyYAML
+dvc
+flask
+gunicorn
+mlflow
