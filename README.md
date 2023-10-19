@@ -39,3 +39,16 @@ pip install -r requirements.txt
 
 * define config/config.yaml and constant.yaml --> add 01_data_ingestion.ipynb  
 * entity --> configuration manager --> componenets --> pipeline and finally run stage_01_data_ingestion.py
+
+7. **EDA**
+
+* load the dataset
+* statistical checking
+* checking number of unique values for each columns
+* check data type
+* check duplicate values
+* check null values
+* check balance of the dataset
+* check outliers
+* visualization
+* checking correlation
