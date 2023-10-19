@@ -52,3 +52,14 @@ pip install -r requirements.txt
 * check outliers
 * visualization
 * checking correlation
+
+
+8. **dvc**
+
+* define dvc.yaml
+
+```bash
+dvc init
+dvc repro
+dvc dag
+```

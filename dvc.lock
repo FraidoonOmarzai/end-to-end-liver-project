@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python3 src/liver/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: src/liver/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: 7ad46779e0d88457b1ac1e3712151f61
+      size: 856
+    outs:
+    - path: artifacts/data_ingestion/liver.csv
+      hash: md5
+      md5: 916eda6c3ca1ec22e900e1eac179cc24
+      size: 23930
+    - path: artifacts/data_ingestion/liver.zip
+      hash: md5
+      md5: fd370a42868cfb4220c934d7ea64c907
+      size: 7702
