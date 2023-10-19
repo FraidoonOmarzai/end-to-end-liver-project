@@ -34,3 +34,8 @@ pip install -r requirements.txt
 4. define logger (**The Logging** is a means of tracking events that happen when some software runs)
 
 5. define utils (**The utils.py** makes it easy to execute common tasks in Python scripts)
+
+6. **Data Ingestion**
+
+* define config/config.yaml and constant.yaml --> add 01_data_ingestion.ipynb  
+* entity --> configuration manager --> componenets --> pipeline and finally run stage_01_data_ingestion.py
