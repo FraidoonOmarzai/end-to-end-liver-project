@@ -18,3 +18,4 @@ dvc
 flask
 gunicorn
 mlflow
+imblearn

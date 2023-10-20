@@ -1,7 +1,8 @@
 from liver.constants import *
 from liver.utils.common import read_yaml, create_directories
 from liver.entity.config_entity import (DataIngestionConfig,
-                                        DataValidationConfig)
+                                        DataValidationConfig,
+                                        DataTransformationConfig)
 
 
 class ConfigurationManager:
@@ -40,3 +41,15 @@ class ConfigurationManager:
         )
 
         return datavalidationconfig
+
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config_path.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            dataset=config.dataset
+        )
+
+        return data_transformation_config

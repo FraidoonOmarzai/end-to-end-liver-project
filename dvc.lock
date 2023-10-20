@@ -32,3 +32,23 @@ stages:
       hash: md5
       md5: 86e6a2f694c57a675b3e2da6b95ff9ba
       size: 23
+  data_transformation:
+    cmd: python3 src/liver/pipeline/stage_03_data_transformation.py
+    deps:
+    - path: artifacts/data_ingestion/liver.csv
+      hash: md5
+      md5: 916eda6c3ca1ec22e900e1eac179cc24
+      size: 23930
+    - path: src/liver/pipeline/stage_03_data_transformation.py
+      hash: md5
+      md5: 7351d1ad767304f74a929fc602009ced
+      size: 1017
+    outs:
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 78ffcb8e0fb1756f287ea0d6b290e789
+      size: 7929
+    - path: artifacts/data_transformation/train.csv
+      hash: md5
+      md5: dfa469132497f12020fba6a31254339b
+      size: 23468
