@@ -63,3 +63,8 @@ dvc init
 dvc repro
 dvc dag
 ```
+
+9. **Data Validation**
+
+* define config.yaml and schema.yaml --> 02_data_validation.ipynb
+* entity --> configuration manager --> componenets --> pipeline stage_02_data_validation.py --> run dvc

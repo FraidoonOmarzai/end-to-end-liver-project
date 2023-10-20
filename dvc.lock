@@ -16,3 +16,19 @@ stages:
       hash: md5
       md5: fd370a42868cfb4220c934d7ea64c907
       size: 7702
+  data_validation:
+    cmd: python3 src/liver/pipeline/stage_02_data_validation.py
+    deps:
+    - path: artifacts/data_ingestion/liver.csv
+      hash: md5
+      md5: 916eda6c3ca1ec22e900e1eac179cc24
+      size: 23930
+    - path: src/liver/pipeline/stage_02_data_validation.py
+      hash: md5
+      md5: 734022a822ee4949b5c144511b591b01
+      size: 827
+    outs:
+    - path: artifacts/data_validation/status.txt
+      hash: md5
+      md5: 86e6a2f694c57a675b3e2da6b95ff9ba
+      size: 23

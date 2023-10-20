@@ -6,3 +6,11 @@ stages:
     outs:
       - artifacts/data_ingestion/liver.zip
       - artifacts/data_ingestion/liver.csv
+
+  data_validation:
+    cmd: python3 src/liver/pipeline/stage_02_data_validation.py
+    deps:
+      - src/liver/pipeline/stage_02_data_validation.py
+      - artifacts/data_ingestion/liver.csv
+    outs:
+      - artifacts/data_validation/status.txt

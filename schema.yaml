@@ -1,0 +1,12 @@
+COLUMNS:
+  Age: int64  
+  Gender: object 
+  Total_Bilirubin: float64
+  Direct_Bilirubin: float64
+  Alkaline_Phosphotase: int64  
+  Alamine_Aminotransferase: int64  
+  Aspartate_Aminotransferase: nt64  
+  Total_Protiens: float64
+  Albumin: float64
+  Albumin_and_Globulin_Rati: float64
+  Dataset: int64 
