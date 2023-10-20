@@ -52,3 +52,29 @@ stages:
       hash: md5
       md5: dfa469132497f12020fba6a31254339b
       size: 23468
+  model_training:
+    cmd: python3 src/liver/pipeline/stage_04_model_training.py
+    deps:
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 78ffcb8e0fb1756f287ea0d6b290e789
+      size: 7929
+    - path: artifacts/data_transformation/train.csv
+      hash: md5
+      md5: dfa469132497f12020fba6a31254339b
+      size: 23468
+    - path: src/liver/pipeline/stage_04_model_training.py
+      hash: md5
+      md5: ef014b1294e98363a0153a139b430da1
+      size: 798
+    params:
+      params.yaml:
+        Random_forest.max_depth: 10
+        Random_forest.min_samples_leaf: 1
+        Random_forest.min_samples_split: 4
+        Random_forest.n_estimators: 200
+    outs:
+    - path: artifacts/model_training/model.joblib
+      hash: md5
+      md5: 974986a81846c86eaece355094bc7a58
+      size: 2008185

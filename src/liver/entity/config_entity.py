@@ -22,3 +22,16 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     dataset: Path
+    
+    
+@dataclass
+class ModelTrainConfig:
+    root_dir: Path
+    train_path: Path
+    test_path: Path
+    model_name: str
+    target: str
+    n_estimators: float
+    min_samples_split: float
+    min_samples_leaf: float
+    max_depth: float

@@ -9,4 +9,8 @@ COLUMNS:
   Total_Protiens: float64
   Albumin: float64
   Albumin_and_Globulin_Rati: float64
-  Dataset: int64 
+  Dataset: int64
+
+
+TARGET:
+  name: Dataset

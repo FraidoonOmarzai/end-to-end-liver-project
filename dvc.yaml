@@ -23,3 +23,17 @@ stages:
     outs:
       - artifacts/data_transformation/test.csv
       - artifacts/data_transformation/train.csv
+
+  model_training:
+    cmd: python3 src/liver/pipeline/stage_04_model_training.py
+    deps:
+      - src/liver/pipeline/stage_04_model_training.py
+      - artifacts/data_transformation/train.csv
+      - artifacts/data_transformation/test.csv
+    params:
+      - Random_forest.n_estimators
+      - Random_forest.min_samples_split
+      - Random_forest.min_samples_leaf
+      - Random_forest.max_depth
+    outs:
+      - artifacts/model_training/model.joblib

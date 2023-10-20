@@ -72,5 +72,11 @@ dvc dag
 
 10. **Data Transformation**
 
-* define config.yaml and schema.yaml --> 03_data_transformation.ipynb (drop null values, label encoding, handle imbalance datasets, train test split)
+* define config.yaml --> 03_data_transformation.ipynb (drop null values, label encoding, handle imbalance datasets, train test split)
 * entity --> configuration manager --> componenets --> pipeline stage_03_data_transformation.py --> run dvc
+
+
+11. **Model Training**
+
+* define config.yaml and params.yaml --> 04_model_training.ipynb
+* entity --> configuration manager --> componenets --> pipeline stage_04_model_training.py --> run dvc
