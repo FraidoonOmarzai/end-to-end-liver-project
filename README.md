@@ -80,3 +80,26 @@ dvc dag
 
 * define config.yaml and params.yaml --> 04_model_training.ipynb
 * entity --> configuration manager --> componenets --> pipeline stage_04_model_training.py --> run dvc
+
+12. **Model Evaluation**
+
+* define config.yaml and schema.yaml--> 05_model_evaluation.ipynb
+
+* Using MLflow 
+
+* Setup dagshub, connect the github repos
+```bash
+MLFLOW_TRACKING_URI=https://dagshub.com/fraidoon_omarzai/end-to-end-liver-project.mlflow \
+MLFLOW_TRACKING_USERNAME=fraidoon_omarzai \
+MLFLOW_TRACKING_PASSWORD=bc25b16bd5206328d8899cf34377f26ad71d1420 \
+python script.py
+```
+
+* Run this to export as env variables
+```bash
+export MLFLOW_TRACKING_URI=https://dagshub.com/fraidoon_omarzai/end-to-end-liver-project.mlflow
+export MLFLOW_TRACKING_USERNAME=fraidoon_omarzai 
+export MLFLOW_TRACKING_PASSWORD=bc25b16bd5206328d8899cf34377f26ad71d1420
+```
+
+* entity --> configuration manager --> componenets --> pipeline stage_05_model_evaluation.py --> run dvc

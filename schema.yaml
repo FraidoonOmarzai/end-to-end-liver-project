@@ -14,3 +14,8 @@ COLUMNS:
 
 TARGET:
   name: Dataset
+
+mlflow:
+  mlflow_uri: https://dagshub.com/fraidoon_omarzai/end-to-end-liver-project.mlflow
+  experiment_name: Liver-> Random Forest
+  run_name: MLOps

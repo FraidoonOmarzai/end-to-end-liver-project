@@ -16,14 +16,14 @@ class DataValidationConfig:
     unzip_dir: Path
     status: str
     all_schema: dict
-    
-    
+
+
 @dataclass
 class DataTransformationConfig:
     root_dir: Path
     dataset: Path
-    
-    
+
+
 @dataclass
 class ModelTrainConfig:
     root_dir: Path
@@ -35,3 +35,16 @@ class ModelTrainConfig:
     min_samples_split: float
     min_samples_leaf: float
     max_depth: float
+
+
+@dataclass
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_path: Path
+    model_path: Path
+    metric_file_name: str
+    mlflow_uri: str
+    experiment_name: str
+    run_name: str
+    target: str
+    all_params: dict

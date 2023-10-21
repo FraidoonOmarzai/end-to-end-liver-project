@@ -70,11 +70,31 @@ stages:
     params:
       params.yaml:
         Random_forest.max_depth: 10
-        Random_forest.min_samples_leaf: 1
-        Random_forest.min_samples_split: 4
+        Random_forest.min_samples_leaf: 2
+        Random_forest.min_samples_split: 2
         Random_forest.n_estimators: 200
     outs:
     - path: artifacts/model_training/model.joblib
       hash: md5
-      md5: 974986a81846c86eaece355094bc7a58
-      size: 2008185
+      md5: 59a585eb5d9ed96d6fe93e17cdad1ba6
+      size: 1994265
+  model_evaluation:
+    cmd: python3 src/liver/pipeline/stage_05_model_evaluation.py
+    deps:
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 78ffcb8e0fb1756f287ea0d6b290e789
+      size: 7929
+    - path: artifacts/model_training/model.joblib
+      hash: md5
+      md5: 59a585eb5d9ed96d6fe93e17cdad1ba6
+      size: 1994265
+    - path: src/liver/pipeline/stage_05_model_evaluation.py
+      hash: md5
+      md5: 07b5ed772f1eb149d1286ccb8d73b910
+      size: 812
+    outs:
+    - path: artifacts/model_evaluation/metrics.json
+      hash: md5
+      md5: c4412c7753333e510e6c42d0bdbba72d
+      size: 103

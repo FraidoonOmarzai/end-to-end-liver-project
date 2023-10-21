@@ -26,3 +26,12 @@ model_training:
   test_path: artifacts/data_transformation/test.csv
   model_name: model.joblib
 
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  test_path: artifacts/data_transformation/test.csv
+  model_path: artifacts/model_training/model.joblib
+  metric_file_name: artifacts/model_evaluation/metrics.json
+  mlflow_uri: https://dagshub.com/fraidoon_omarzai/end-to-end-liver-project.mlflow
+  experiment_name: Liver-Random-Forest
+  run_name: MLOps

@@ -1,9 +1,10 @@
 from liver.constants import *
-from liver.utils.common import read_yaml, create_directories
+from liver.utils.common import read_yaml, create_directories, save_json
 from liver.entity.config_entity import (DataIngestionConfig,
                                         DataValidationConfig,
                                         DataTransformationConfig,
-                                        ModelTrainConfig)
+                                        ModelTrainConfig,
+                                        ModelEvaluationConfig)
 
 
 class ConfigurationManager:
@@ -77,3 +78,24 @@ class ConfigurationManager:
         )
 
         return model_train_config
+
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config_path.model_evaluation
+        params = self.params_path
+        schema = self.schema
+
+        create_directories([config.root_dir])
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_path=config.test_path,
+            model_path=config.model_path,
+            metric_file_name=config.metric_file_name,
+            mlflow_uri=config.mlflow_uri,
+            experiment_name=config.experiment_name,
+            run_name=config.run_name,
+            target=schema.TARGET.name,
+            all_params=params.Random_forest
+        )
+
+        return model_evaluation_config
