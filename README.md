@@ -103,3 +103,8 @@ export MLFLOW_TRACKING_PASSWORD=bc25b16bd5206328d8899cf34377f26ad71d1420
 ```
 
 * entity --> configuration manager --> componenets --> pipeline stage_05_model_evaluation.py --> run dvc
+
+12. **Flask App**
+* add the required html and css to the project
+* define app.py
+* run the app
