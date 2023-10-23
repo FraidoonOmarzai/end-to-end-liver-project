@@ -152,3 +152,78 @@ jobs:
         docker push fraidoonjan/pneumonia:v1
 
 ```
+
+### 14. **AWS**
+
+* Deploy our docker image to AWS using Github-Actions
+#### Setps:
+
+1. Login to AWS console
+2. Create IAM user for deployment and download the accessKeys
+
+```bash
+#with specific access
+
+1. ECR: Elastic Container registry to save your docker image in aws
+2. EC2 access : It is virtual machine
+
+
+#Description: About the deployment
+
+1. Build docker image of the source code
+
+2. Push your docker image to ECR
+
+3. Launch Your EC2 
+
+4. Pull Your image from ECR in EC2
+
+5. Lauch your docker image in EC2
+
+#Policy for IAM:
+
+1. AmazonEC2ContainerRegistryFullAccess
+2. AmazonEC2FullAccess
+```
+
+3. Create ECR repo to store/save docker image
+```bash
+- Save the URI: 060145207853.dkr.ecr.eu-north-1.amazonaws.com/liver-project
+```
+4. Create EC2 machine (Ubuntu)
+5. Open EC2 and Install docker in EC2 Machine:
+
+```bash
+#optinal
+
+sudo apt-get update
+
+sudo apt-get upgrade -y
+
+#required
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+```
+
+6. Configure EC2 as self-hosted runner:
+```bash
+setting-->actions-->runner-->new self hosted runner--> choose os--> copy each command and run it on EC2 Instance Connect
+```
+7. Setup github secrets:
+```bash
+AWS_ACCESS_KEY_ID=
+
+AWS_SECRET_ACCESS_KEY=
+
+AWS_REGION = eu-north-1
+
+AWS_ECR_LOGIN_URI =  060145207853.dkr.ecr.eu-north-1.amazonaws.com
+
+ECR_REPOSITORY_NAME = liver-project
+```
