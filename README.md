@@ -108,3 +108,47 @@ export MLFLOW_TRACKING_PASSWORD=bc25b16bd5206328d8899cf34377f26ad71d1420
 * add the required html and css to the project
 * define app.py
 * run the app
+
+13. **Docker And GithubAction(CI/CD)**
+* define the docker file
+* bulid and run the docker image
+
+```bash
+docker build -t liver-app .  # build docker image
+docker ps   
+docker images
+docker run -p 8080:8080 liver-app
+```
+**Note:** The app work well using docker in pc 
+
+* login to docker hub and create a repository. (add DOCKERHUB_TOKEN and DOCKERHUB_USERNAME to github secrets)
+
+* using github-action to push the docker image to docker hub
+```bash
+name: Docker Build and Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Login to Docker Hub
+      run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+
+    - name: Build and push
+      run: |
+        docker build -t fraidoonjan/pneumonia:v1 .
+        docker push fraidoonjan/pneumonia:v1
+
+```
